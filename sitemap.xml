@@ -5,56 +5,63 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://fjorgemota.com/index.html</loc>
-<lastmod>2013-06-02T13:40:06-00:00</lastmod>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>http://fjorgemota.com/archives.html</loc>
-<lastmod>2013-06-02T13:40:06-00:00</lastmod>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>http://fjorgemota.com/tags.html</loc>
-<lastmod>2013-06-02T13:40:06-00:00</lastmod>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>http://fjorgemota.com/categories.html</loc>
-<lastmod>2013-06-02T13:40:06-00:00</lastmod>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>http://fjorgemota.com/contato/</loc>
-<lastmod>2013-06-02T13:40:06-00:00</lastmod>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>http://fjorgemota.com/divulgue/</loc>
-<lastmod>2013-06-02T13:40:06-00:00</lastmod>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>http://fjorgemota.com/orcamento/</loc>
-<lastmod>2013-06-02T13:40:06-00:00</lastmod>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>http://fjorgemota.com/sobre/</loc>
-<lastmod>2013-06-02T13:40:06-00:00</lastmod>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>http://fjorgemota.com/artigo/5-razoes-para-amar-coffeescript/</loc>
+<lastmod>2013-06-02T16:25:10-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
@@ -67,15 +74,50 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://fjorgemota.com/categoria/dicas/</loc>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
 <loc>http://fjorgemota.com/categoria/geral/</loc>
-<lastmod>2013-06-02T13:40:06-00:00</lastmod>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>http://fjorgemota.com/tag/coffeescript/</loc>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>http://fjorgemota.com/tag/javascript/</loc>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>http://fjorgemota.com/tag/programacao/</loc>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>http://fjorgemota.com/tag/ferramentas/</loc>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>http://fjorgemota.com/sobre/</loc>
-<lastmod>2013-06-02T13:40:06-00:00</lastmod>
+<lastmod>2013-06-02T16:25:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
