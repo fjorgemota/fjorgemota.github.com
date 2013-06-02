@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Fernando Jorge Mota</title><link href="http://fjorgemota.com/" rel="alternate"></link><link href="http://fjorgemota.com/atom/posts.xml" rel="self"></link><id>http://fjorgemota.com/</id><updated>2013-06-02T16:25:10-03:00</updated><entry><title>5 Razões para AMAR CoffeeScript</title><link href="http://fjorgemota.com/artigo/5-razoes-para-amar-coffeescript/" rel="alternate"></link><updated>2013-06-02T16:25:10-03:00</updated><author><name>Fernando Jorge Mota</name></author><id>tag:fjorgemota.com,2013-06-02:artigo/5-razoes-para-amar-coffeescript/</id><summary type="html">&lt;p&gt;Durante o desenvolvimento de um site, é comum nos depararmos com códigos que as vezes poderiam ser diminuidos e simplificados brutalmente, simplificando a programação e a leitura de um código. No Javascript, exemplos de código assim seriam coisas como definições de variáveis, funções, funções que aceitam múltiplos argumentos, loops em objetos, e etc. Pensando nisso, o programador &lt;a href="(http://github.com/jashkenas)"&gt;Jeremy Ashkenas&lt;/a&gt; resolveu, em 24 de dezembro de 2009, criar a linguagem &lt;strong&gt;CoffeeScript&lt;/strong&gt;, que será apresentada neste post.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Fernando Jorge Mota</title><link href="http://fjorgemota.com/" rel="alternate"></link><link href="http://fjorgemota.com/atom/posts.xml" rel="self"></link><id>http://fjorgemota.com/</id><updated>2013-06-02T16:37:02-03:00</updated><entry><title>5 Razões para AMAR CoffeeScript</title><link href="http://fjorgemota.com/artigo/5-razoes-para-amar-coffeescript/" rel="alternate"></link><updated>2013-06-02T16:37:02-03:00</updated><author><name>Fernando Jorge Mota</name></author><id>tag:fjorgemota.com,2013-06-02:artigo/5-razoes-para-amar-coffeescript/</id><summary type="html">&lt;p&gt;Durante o desenvolvimento de um site, é comum nos depararmos com códigos que as vezes poderiam ser diminuidos e simplificados brutalmente, simplificando a programação e a leitura de um código. No Javascript, exemplos de código assim seriam coisas como definições de variáveis, funções, funções que aceitam múltiplos argumentos, loops em objetos, e etc. Pensando nisso, o programador &lt;a href="(http://github.com/jashkenas)"&gt;Jeremy Ashkenas&lt;/a&gt; resolveu, em 24 de dezembro de 2009, criar a linguagem &lt;strong&gt;CoffeeScript&lt;/strong&gt;, que será apresentada neste post.&lt;/p&gt;
 &lt;p&gt;CoffeeScript é uma linguagem de programação simples, "pequena" - como apresentada no &lt;a href="http://coffeescript.org"&gt;site oficial&lt;/a&gt; -, e tem como seu maior mérito a compilação pura e eficaz para..Javascript. Mas você deve estar se perguntando: Por quê eu usaria algo que apenas compila o que eu já posso fazer manualmente? Bom, a resposta é simples e sagaz: Atalhos e uma sintaxe mais simples! :D&lt;/p&gt;
 &lt;p&gt;CoffeeScript proporciona uma série de eficientes e poderosos "atalhos" para o uso com Javascript, um código Javascript assim:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
@@ -71,20 +71,18 @@
 &lt;h2&gt;3 - Argumentos padrão&lt;/h2&gt;
 &lt;p&gt;Não sei se você já percebeu, mas no CoffeeScript, assim como no Python, você pode facilmente usar valores padrões para os seus argumentos de uma maneira bem prática.&lt;/p&gt;
 &lt;p&gt;No JavaScript, para setar um argumento padrão, &lt;em&gt;geralmente&lt;/em&gt; é usado:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="o"&gt;:::&lt;/span&gt;&lt;span class="nx"&gt;javascript&lt;/span&gt;
- &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;helloworld&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;nome&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
-     &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="nx"&gt;nome&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
-         &lt;span class="nx"&gt;nome&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;World&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-     &lt;span class="p"&gt;}&lt;/span&gt;
-     &lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Hello &amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nx"&gt;nome&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
- &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;helloworld&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;nome&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="nx"&gt;nome&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+        &lt;span class="nx"&gt;nome&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;World&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Hello &amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nx"&gt;nome&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Já no CoffeeScript, é usado:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="o"&gt;:::&lt;/span&gt;&lt;span class="n"&gt;coffeescript&lt;/span&gt;
- &lt;span class="n"&gt;helloworld&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;nome&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;World&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;
-     &lt;span class="n"&gt;alert&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Hello #{nome}&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;helloworld = &lt;/span&gt;&lt;span class="nf"&gt;(nome=&amp;quot;World&amp;quot;) -&amp;gt;&lt;/span&gt;
+    &lt;span class="nx"&gt;alert&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Hello &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="nx"&gt;nome&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 

@@ -150,20 +150,18 @@ https://github.com/wamonite/relapse
 <h2>3 - Argumentos padrão</h2>
 <p>Não sei se você já percebeu, mas no CoffeeScript, assim como no Python, você pode facilmente usar valores padrões para os seus argumentos de uma maneira bem prática.</p>
 <p>No JavaScript, para setar um argumento padrão, <em>geralmente</em> é usado:</p>
-<div class="highlight"><pre> <span class="o">:::</span><span class="nx">javascript</span>
- <span class="kd">function</span> <span class="nx">helloworld</span><span class="p">(</span><span class="nx">nome</span><span class="p">){</span>
-     <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">nome</span><span class="p">){</span>
-         <span class="nx">nome</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span><span class="o">+</span><span class="nx">nome</span><span class="p">);</span>
- <span class="p">}</span>
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">helloworld</span><span class="p">(</span><span class="nx">nome</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">nome</span><span class="p">){</span>
+        <span class="nx">nome</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span><span class="o">+</span><span class="nx">nome</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p>Já no CoffeeScript, é usado:</p>
-<div class="highlight"><pre> <span class="o">:::</span><span class="n">coffeescript</span>
- <span class="n">helloworld</span> <span class="o">=</span> <span class="p">(</span><span class="n">nome</span><span class="o">=</span><span class="s">&quot;World&quot;</span><span class="p">)</span> <span class="o">-&gt;</span>
-     <span class="n">alert</span> <span class="s">&quot;Hello #{nome}&quot;</span>
+<div class="highlight"><pre><span class="nv">helloworld = </span><span class="nf">(nome=&quot;World&quot;) -&gt;</span>
+    <span class="nx">alert</span> <span class="s">&quot;Hello </span><span class="si">#{</span><span class="nx">nome</span><span class="si">}</span><span class="s">&quot;</span>
 </pre></div>
 
 
