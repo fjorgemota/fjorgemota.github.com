@@ -1,12 +1,12 @@
-String.prototype.title = function() {
-    return this.replace(/\w\S*/g, function(txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
-}
-String.prototype.trim = function() {
-    return this.replace(/^\s+|\s+$/g, "");
-}
-document.body.onload = function() {
+(function(){
+	String.prototype.title = function() {
+		return this.replace(/\w\S*/g, function(txt) {
+		    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+		});
+	}
+	String.prototype.trim = function() {
+		return this.replace(/^\s+|\s+$/g, "");
+	}
     document.getElementById("generate").onclick = function() {
         var code = document.getElementById("code").value, lines = code.split("\n"), setRow = "", getters = '', init_comment = "/*", final_comment = "*/", setters = '', line = '', lang = null, tokens = [],toArray='';
         if(code.match(/(private|protected|public)?\$([^;]*);/gi)) {
@@ -146,4 +146,4 @@ document.body.onload = function() {
         }
         document.getElementById("code_generated").value = lines.join("\n")+"\n"+init_comment+" Getters "+final_comment+"\n" + getters + "\n"+init_comment+" Setters "+final_comment+"\n" + setters+"\n"+init_comment+" setRow "+final_comment+"\n"+setRow+"\n\n"+init_comment+" toArray "+final_comment+"\n"+toArray+"\n";
     }
-}
+})();
