@@ -3,7 +3,7 @@
 	var theScript = null;
 	for(var c=0, l=allScripts.length;c<l;++c){
 		var tempScript = allScripts[c];
-		if(tempScript.src.match("http://fjorgemota.com/static/scripts/banner/banner.js") != null && !tempScript.getAttribute("data-banner-used")){
+		if(tempScript.src.match("/static/scripts/banner/banner.js") != null && !tempScript.getAttribute("data-banner-used")){
 			theScript = tempScript;
 			break;
 		}
