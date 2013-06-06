@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Fernando Jorge Mota - Angular.JS - Aplicativos estruturados com facilidade</title>
+  <title>Fernando Jorge Mota - Require.JS - Carregando scripts na hora certa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="http://fjorgemota.com/theme/css/bootstrap.css" rel="stylesheet" type="text/css"/>
   <link href="http://fjorgemota.com/theme/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"/>
@@ -77,32 +77,44 @@ https://github.com/wamonite/relapse
 <!-- Content --> 
 <div class="span9">
 <article>
-<h1>Angular.JS - Aplicativos estruturados com facilidade</h1>
+<h1>Require.JS - Carregando scripts na hora certa</h1>
 
-<p><img src="/static/images/scripts/angularjs.png" align="right" />As vezes, no processo de criação de um aplicativo web, podemos perder um tempo precioso em coisas que podem já terem sido criadas por outro programador da comunidade opensource, na forma de biblioteca, e todo mundo sabe disso. Com o <strong>Angular.js</strong>, biblioteca Javascript criada pelo Google, esta percepção fica ainda mais vísivel: Você percebe que, literalmente, Backbone.js e o conceito de "views" é coisa do passado, literalmente.</p>
-<p>E quando eu digo "coisa do passado", eu <strong>não</strong> estou exagerando. <strong>Angular.js</strong> é o tipo de biblioteca que parece meio estranha no começo, mais ou menos como <strong>jQuery</strong>, cuja utilidade muitas vezes era questionada com perguntas como "Mas Javascript puro já faz isso", mas nesse caso envolvendo o Backbone.js.</p>
-<p>A idéia do Angular.js, pelo treinamento prévio que fiz (sou auto-ditada, aí ajuda um pouco..), é tornar transparente para o usuário questões como modelos, views e até mesmo controllers. Funciona da seguinte forma: Templates <strong>não</strong> existem - são substituidos por blocos HTML com determinados atributos (ng-*) -, modelos também <strong>não</strong>, no seu lugar estão objetos comuns, assim como coleções, que são ~substituidas~ por arrays. Quanto aos controllers? São funções básicas botando ordem <strong>EM TUDO</strong>.</p>
-<p>O grande diferencial (e uma das coisas que eu mais gostei, aliás) no Angular.js é que tudo tem o seu <strong>escopo</strong>. O que quero dizer? Quero dizer que diferentes elementos de um mesmo aplicativo (imagine, por exemplo, duas tabelas distintas) possuem diferentes controladores, modelos e views, tudo salvo em um <strong>escopo</strong> próprio ao qual o controlador, e as views.</p>
-<p>Enfim, isso é uma abstração básica do que eu entendi sobre a biblioteca. Minha opinião sobre isso tudo? <strong>MUITO</strong> maneiro! </p>
-<p>Se você quiser saber mais, leia este post do <strong><a href="http://tableless.com.br/criando-uma-aplicacao-simples-com-angularjs/">Tableless</a></strong>, ou aguarde mais um pouco que no futuro pode sair um post muito mais completo aqui no site especialmente dedicado ao Angular.js. ;)</p>
+<p>Quando você faz uma aplicação web, é comum carregar a página de scripts. Atualmente, isso é considerado um grave problema, ainda mais considerando que a maioria dos aplicativos web também <strong>devem</strong> ter suporte mobile para fazerem sucesso, e considerando que usuários de aplicações móveis, e até mesmo usuários de aplicações web voltadas para desktop, geralmente não contam com uma boa conexão, pelo menos no Brasil. É focando nessas aplicações que a dica de hoje é voltada especialmente para o Require.JS, um poderoso carregador JavaScript que implementa a API <abbr title="Asynchronous Module Definition">AMD</abbr>.</p>
+<p>Mas antes você deve estar se perguntando.. <a href="http://fjorgemota.com/artigo/o-que-e-amd-javascript/">O que é AMD? Leia a resposta neste post que preparamos para você.</a></p>
+<p>Agora que você já viu as vantagens em usar a API AMD, você já tem uma visão básica de como usar o Require.JS, que implementa a API, e, cá entre nós, <strong>implementa muito bem</strong>.</p>
+<p>Alguns outros detalhes sobre Require.js que você <strong>PRECISA</strong> saber:</p>
+<h2>Definição de "módulo principal"</h2>
+<p>No Require.JS, você pode definir o módulo principal para ser carregado em uma página diretamente na chamada ao carregamento do <strong>Require.js</strong>. Se nós tivessemos um arquivo <code>index.html</code> cujo módulo principal fosse o <code>foo.js</code>, implementado acima, por exemplo, poderiamos fazê-lo da seguinte forma:</p>
+<div class="highlight"><pre>(...)
+<span class="nt">&lt;script </span><span class="na">language=</span><span class="s">&quot;javascript&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;(path to Require.js)/require.js&quot;</span> <span class="na">data-main=</span><span class="s">&quot;foo&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+(...)
+</pre></div>
+
+
+<p>Vale lembrar, entretanto, que tal chamada é totalmente <strong>opcional</strong>, ainda mais se você quiser <a href="http://requirejs.org/docs/api.html#config"><strong>configurar</strong></a> mais profundamente o Require.JS, o que na maioria das vezes...vale a pena! ;)</p>
+<h2>Arquivos JavaScript que não suportam AMD</h2>
+<p>O Require.JS é uma biblioteca tão poderosa que é capaz de usar <strong>normalmente</strong> arquivos JavaScripts que não usam a API AMD. Para isso, no entanto, é necessário uma configuração especial, mas ainda assim fácil de usar. <a href="http://requirejs.org/docs/api.html#config-shim">Aprenda sobre ela aqui</a>.</p>
+<h2>Pré-Otimização!</h2>
+<p>Não quer que o Require.JS carregue os vários arquivos necessários para exibir uma página no momento do carregamento da página? Ok! Você pode pré-otimizar e juntar todos os arquivos seguindo <strong>exatamente</strong> sua ordem de dependência através de um <strong>otimizador muito poderoso chamado r.js</strong>.</p>
+<p>Ficou interessado? <a href="http://requirejs.org/docs/optimization.html">Leia a documentação do r.js aqui</a>.</p>
+<p>E por enquanto é isso, pessoal! Abaixo, segue os tradicionais links para a biblioteca:</p>
 <ul>
-<li><strong>Site Oficial</strong>: <a href="http://angularjs.org">http://angularjs.org</a></li>
-<li><strong>Documentação</strong>: <a href="http://docs.angularjs.org/">http://docs.angularjs.org/</a></li>
-<li><strong>Twitter</strong>: <a href="http://twitter.com/angularjs">http://twitter.com/angularjs</a></li>
-<li><strong>Demonstração</strong>: <a href="http://angularjs.org">http://angularjs.org</a></li>
+<li><strong>Site Oficial:</strong>  <a href="http://requirejs.org/">http://requirejs.org/</a></li>
+<li><strong>Documentação:</strong> <a href="http://requirejs.org/docs/api.html">http://requirejs.org/docs/api.html</a></li>
+<li><strong>GitHub:</strong> <a href="http://github.com/jrburke/requirejs">http://github.com/jrburke/requirejs</a></li>
 </ul>
 
 <detail><p>
-Postado em 04 de junho de 2013
+Postado em 05 de junho de 2013
  por <a class="url fn" href="http://fjorgemota.com/sobre/">Fernando Jorge Mota</a> em <a href="http://fjorgemota.com/categoria/web-resources/">Web Resources</a> 
- com as tags <a href="http://fjorgemota.com/tag/scripts/">Scripts</a>, <a href="http://fjorgemota.com/tag/javascript/">JavaScript</a>, <a href="http://fjorgemota.com/tag/ferramentas/">Ferramentas</a>, <a href="http://fjorgemota.com/tag/web-resouces-javascript/">Web Resouces JavaScript</a>, <a href="http://fjorgemota.com/tag/html5/">HTML5</a>
+ com as tags <a href="http://fjorgemota.com/tag/javascript/">JavaScript</a>, <a href="http://fjorgemota.com/tag/ferramentas/">Ferramentas</a>, <a href="http://fjorgemota.com/tag/web-resouces-javascript/">Web Resouces JavaScript</a>, <a href="http://fjorgemota.com/tag/scripts/">Scripts</a>
 </p></detail>
     <div id="related_posts">
 <h2>Posts relacionados</h2><br />
 Veja algumas dicas que reservamos especialmente para você: <br /><br />
 <ul>
             <li><a href="http://fjorgemota.com/artigo/qtip2-poderosos-tooltips-com-jquery/">QTip2 - Poderosos Tooltips com jQuery</a></li>
-            <li><a href="http://fjorgemota.com/artigo/requirejs-carregando-scripts-na-hora-certa/">Require.JS - Carregando scripts na hora certa</a></li>
+            <li><a href="http://fjorgemota.com/artigo/angularjs-aplicativos-estruturados-com-facilidade/">Angular.JS - Aplicativos estruturados com facilidade</a></li>
             <li><a href="http://fjorgemota.com/artigo/5-razoes-para-amar-coffeescript/">5 Razões para AMAR CoffeeScript</a></li>
             <li><a href="http://fjorgemota.com/artigo/o-que-e-amd-javascript/">O que é AMD? (JavaScript)</a></li>
     </ul>
@@ -111,8 +123,8 @@ Veja algumas dicas que reservamos especialmente para você: <br /><br />
   <div id="disqus_thread"></div>
 <script type="text/javascript">
 var disqus_shortname = 'fernandojorgemota';
-var disqus_identifier = 'http://fjorgemota.com/artigo/angularjs-aplicativos-estruturados-com-facilidade/';
-var disqus_title = 'Angular.JS - Aplicativos estruturados com facilidade';
+var disqus_identifier = 'http://fjorgemota.com/artigo/requirejs-carregando-scripts-na-hora-certa/';
+var disqus_title = 'Require.JS - Carregando scripts na hora certa';
 
 (function() {
   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

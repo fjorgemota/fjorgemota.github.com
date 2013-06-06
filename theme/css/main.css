@@ -57,7 +57,7 @@ a,a:hover
 {
   text-decoration: none;
 }
-.post-title{
+article h1:first-child a{
   color: #000;
 }
 h1,h2,h3,h4,h5,h6
