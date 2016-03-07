@@ -146,11 +146,17 @@
 					err.innerHTML = "Errado! O resultado correto é "+(n1n*n2n);
 				}
 				var cb = function() {
-					setTimeout(function() {
-						start();
-					}, 1500);
+					if(isNaN(r)) {
+						// If it is not a number, we will try again
+						recognition.start();
+					} else {
+						setTimeout(function() {
+							start();
+						}, 1500);
+					}
 				};
 				if (err.style.color !== "blue") {
+					// If there is an error, we will repeat again sometime in the future
 					table.unshift([n1n, n2n]);
 					table = _.shuffle(table);
 				}
