@@ -68,7 +68,7 @@
 		var countdown = document.getElementById("countdown");
 		var partialResult = document.getElementById("partial_result");
 		var result = document.getElementById("result");
-
+		var interval;
 		var start = _.throttle(function() {
 			if (table.length === 0) {
 				speak("Parabéns, você conseguiu responder toda a tabuada de zero a dez corretamente!", function() {
@@ -86,13 +86,15 @@
 			corrects.innerHTML = correctsN;
 			errors.innerHTML = errorsN;
 			var seconds = secondsTotal+0;
-			var interval;
 			err.style.color = "red";
 			err.innerHTML = '';
 			var recognition = new webkitSpeechRecognition();
 			recognition.continuous = false;
 			recognition.interimResults = true;
 			recognition.lang = "pt-BR";
+			if (interval) {
+				clearInterval(interval);
+			}
 			speak(n1n+" vezes "+n2n+" é igual a", function() {
 				console.log("Start recognition");
 				recognition.start();
@@ -125,7 +127,10 @@
 			 }
 			recognition.onerror = function(event) { 
 				if (event.error === "no-speech") {
-					return recognition.start();
+					setTimeout(function() {
+						recognition.start()
+					}, 50);
+					return;
 				}
 				err.innerHTML = "Houve um erro durante a leitura: "+event.error;
 			 }
