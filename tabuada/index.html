@@ -35,7 +35,7 @@
 			return Math.floor(Math.random()*11);
 		}
 		function speak(str, callback) {
-			console.log("Falando '"+str+"'");
+			console.log("Speaking '"+str+"'");
 			var msg = new SpeechSynthesisUtterance();
 			var voices = window.speechSynthesis.getVoices();
 			msg.voice = voices[10]; // Note: some voices don't support altering params
@@ -94,6 +94,7 @@
 			recognition.interimResults = true;
 			recognition.lang = "pt-BR";
 			speak(n1n+" vezes "+n2n+" é igual a", function() {
+				console.log("Start recognition");
 				recognition.start();
 				interval = setInterval(function() {
 					seconds--;
@@ -102,7 +103,9 @@
 						table.unshift([n1n, n2n]);
 						table = _.shuffle(table);
 						clearInterval(interval);
+						console.log("Time ended! Ending recognition (and cleared interval)");
 						recognition.stop(); // Stop recognizing..
+						start();
 					}
 				}, 1000)
 			})
@@ -121,18 +124,15 @@
 				partialResult.innerHTML = interim_transcript;
 			 }
 			recognition.onerror = function(event) { 
-				err.innerHTML = "Houve um erro durante a leitura!";
+				if (event.error === "no-speech") {
+					return recognition.start();
+				}
+				err.innerHTML = "Houve um erro durante a leitura: "+event.error;
 			 }
 			recognition.onend = function() { 
 				var r = result.innerHTML;
 				if (!r.length) {
-					if (seconds == 0) {
-						// If the time finished, we will start again
-						start();
-					} else {
-						// If the time yet not finished, we will just enable recording 
-						return recognition.start();
-					}
+					return;
 				}
 				recognition.stop();
 				var r = parseInt(r);
@@ -157,6 +157,7 @@
 						// If it is not a number, we will try again
 						final_transcript = '';
 						result.innerHTML = '';
+						console.log("Start recognition");
 						recognition.start();
 					} else {
 						setTimeout(function() {
