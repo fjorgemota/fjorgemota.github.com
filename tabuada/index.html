@@ -102,7 +102,7 @@
 						table.unshift([n1n, n2n]);
 						table = _.shuffle(table);
 						clearInterval(interval);
-						start();
+						recognition.stop(); // Stop recognizing..
 					}
 				}, 1000)
 			})
@@ -126,7 +126,13 @@
 			recognition.onend = function() { 
 				var r = result.innerHTML;
 				if (!r.length) {
-					return recognition.start();
+					if (second == 0) {
+						// If the time finished, we will start again
+						start();
+					} else {
+						// If the time yet not finished, we will just enable recording 
+						return recognition.start();
+					}
 				}
 				var r = parseInt(r);
 				if (interval) {
