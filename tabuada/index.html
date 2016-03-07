@@ -154,6 +154,8 @@
 				var cb = function() {
 					if(isNaN(r)) {
 						// If it is not a number, we will try again
+						final_transcript = '';
+						result.innerHTML = '';
 						recognition.start();
 					} else {
 						setTimeout(function() {
